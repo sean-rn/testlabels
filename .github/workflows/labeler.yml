@@ -2,8 +2,8 @@ name: "Pull Request Labeler"
 on:
   # Run on the opened, synchronize, and reopened types of pull request actions
   pull_request_target:
-    # If the following paths are being changed.  Note this prevents the label from being removed if you
-    # erase the migrate script files via a force-push.
+    # If the following paths are being changed. 
+    # Note this saves billable runs, but prevents us from using sync-labels: true
     paths:
       - 'migrate/*.sql'
 
@@ -14,4 +14,4 @@ jobs:
     - uses: actions/labeler@v3
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        sync-labels: true # Whether or not to remove labels when matching files are reverted or no longer changed by the PR
+        sync-labels: false # Whether or not to remove labels when matching files are reverted or no longer changed by the PR
