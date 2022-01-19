@@ -1,0 +1,5 @@
+# Configures the https://github.com/marketplace/actions/labeler action
+
+# Mark any PRs that contain migrate scripts
+schema:
+  - migrate/*.sql
