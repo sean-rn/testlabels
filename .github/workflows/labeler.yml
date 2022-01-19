@@ -2,7 +2,8 @@ name: "Pull Request Labeler"
 on:
   # Run on the opened, synchronize, and reopened types of pull request actions
   pull_request_target:
-    # If the following paths are being changed
+    # If the following paths are being changed.  Note this prevents the label from being removed if you
+    # erase the migrate script files via a force-push.
     paths:
       - 'migrate/*.sql'
 
