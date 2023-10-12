@@ -1,0 +1,16 @@
+# Verify that pull requests pass linter checks
+name: testing-check
+on:
+  pull_request:
+permissions:
+  contents: read
+  pull-requests: read
+  checks: write
+jobs:
+  test-it:
+    name: Something with a Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Adding markdown
+        run: echo '### Hello world! 🚀' >> $GITHUB_STEP_SUMMARY
